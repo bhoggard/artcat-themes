@@ -18,8 +18,8 @@ export default function Home() {
   const { loading, error, data } = useQuery(
     WEBSITE_QUERY
   )
-  console.log(data)
 
+  if (loading) return <p>...</p>;
   if (error) return <ErrorMessage message="Error loading posts." />
 
   return <h1>{data.website.title}</h1>
